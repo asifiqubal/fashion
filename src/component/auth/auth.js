@@ -3,7 +3,7 @@ import React from 'react';
 import {PrimaryButton} from '../common/ui_component';
 let {width, height} = Dimensions.get('window');
 
-const AuthHome = () => {
+const AuthHome = props => {
   return (
     <View style={styles.container}>
       <View style={{flex: 1, justifyContent: 'center'}}>
@@ -16,7 +16,10 @@ const AuthHome = () => {
         />
       </View>
       <View style={{flex: 2, justifyContent: 'center'}}>
-        <PrimaryButton text="Login With Phone" />
+        <PrimaryButton
+          text="Login With Phone"
+          onPress={() => props.navigation.navigate('Login')}
+        />
         <Text style={styles.boltText}>Shop With Us</Text>
       </View>
     </View>
